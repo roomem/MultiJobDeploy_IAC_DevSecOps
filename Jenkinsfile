@@ -18,7 +18,7 @@ pipeline {
             steps {
 
                 build job: 'rome_aks', wait: false, parameters: [
-                    choice(name: 'scanMode', value: params.scanMode)
+                    string(name: 'scanMode', value: params.scanMode)
                 ]
             }
         }
@@ -28,7 +28,7 @@ pipeline {
             steps {
 
                 build job: 'rome_gateway', wait: false, parameters: [
-                    choice(name: 'scanMode', value: params.scanMode)
+                    string(name: 'scanMode', value: params.scanMode)
                 ]
             }
         }
@@ -37,7 +37,7 @@ pipeline {
             steps {
 
                 build job: 'rome_user', wait: false, parameters: [
-                    choice(name: 'scanMode', value: params.scanMode)
+                    string(name: 'scanMode', value: params.scanMode)
                 ]
             }
         }
@@ -46,7 +46,7 @@ pipeline {
             steps {
 
                 build job: 'rome_certificate', wait: false, parameters: [
-                    choice(name: 'scanMode', value: params.scanMode)
+                    string(name: 'scanMode', value: params.scanMode)
                 ]
             }
         }
@@ -55,7 +55,7 @@ pipeline {
             steps {
 
                 build job: 'rome_frontend', wait: false, parameters: [
-                    choice(name: 'scanMode', value: params.scanMode)
+                    string(name: 'scanMode', value: params.scanMode)
                 ]
             }
         }
